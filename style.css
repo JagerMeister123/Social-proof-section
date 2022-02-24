@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root {
+    /* colors */
+    --primary_magenta : hsl(300, 43%, 22%);
+    --primary_pink: hsl(333, 80%, 67%);
+
+    --magenta_dark: hsl(303, 10%, 53%);
+    --magenta_light: hsl(300, 24%, 96%);
+
+}
+
+
+*{
+    font-family: 'Spartan', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/bg-pattern-top-desktop.svg) , url(images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-size: 45% , 70%;
+    background-repeat: no-repeat, no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+article {
+    max-width: 75%;
+    min-height: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* Statement */
+
+#statement {
+    max-width: 74%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#statement > h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary_magenta);
+}
+
+#statement > p {
+    padding-top: 1.5rem;
+    font-size: 1rem;
+    color: var(--magenta_dark);
+}
+
+
+
+
+
+
+/* Reviews */
+
+#reviews {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    gap : 1rem;
+    padding: 10%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+#reviews > div {
+    min-width: 110%;
+    height: 110%;
+    background-color: var(--magenta_light);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+#reviews > div:nth-child(2) {
+    transform: translateX(15%);
+}
+
+#reviews > div:last-child {
+    transform: translateX(30%);
+}
+
+.stars {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.stars > img {
+    height: max(15%,25px);
+    width: max(5%,25px);
+    padding: 2%;
+}
+
+.rating {
+    min-width: 60%;
+    color: var(--primary_magenta);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+/* Testimonies */
+
+#testimony {
+    grid-column: span 2;
+    display: grid;
+    gap : 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    color: white;
+}
+
+
+.card {
+    background-color: var(--primary_magenta);
+    border-radius: 1.2rem;
+    display: grid;
+    grid-template-rows: 1fr , 2fr;
+}
+
+.name {
+    
+}
+
+.verified {
+
+}
+
+.opinion {
+
+}
+
+
+@media (max-width : 780px) {
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+    #reviews > div:nth-child(2) {
+        transform: translateX(0%);
+    }
+    
+    #reviews > div:last-child {
+        transform: translateX(0%);
+    }
+
+
+
+    #testimony {
+        grid-column: span 1;
+    }
+}
